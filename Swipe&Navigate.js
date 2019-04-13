@@ -21,14 +21,22 @@ const Assets = [
 
 
 class HomeScreen extends Component<{}> {
+
+
   
+
   render() {
-    var Array = []
-    for(var i=0;i<Assets.length;i++){
-      Array.push(<Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[i].uri} /></Card>);
-    }
+
+ var Array = []
+ 
+  for(var i=0;i<Assets.length;i++){
+    Array.push(<Card style={[styles.card, styles.card1]}>
+              <Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[i].uri} />
+              </Card>);
+  }
+
     return (
-      <View style={{flex:1}}>
+      <View style={{flex:1, marginTop:50}}>
 
         <View style={{ flex: 0.3, justifyContent: "center", alignItems: "center"}}>
           <Button
@@ -48,7 +56,16 @@ class HomeScreen extends Component<{}> {
           //onSwiped={() => console.log('onSwiped')}
           //onSwipedLeft={() => console.log('onSwipedLeft')}
         >
-        {Array}
+          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[0].uri} /></Card>
+          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[1].uri} /></Card>
+          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[2].uri} /></Card>
+          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[3].uri} /></Card>
+          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[4].uri} /></Card>
+          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[5].uri} /></Card>
+          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[6].uri} /></Card>
+
+           {Array}
+
         </CardStack>
 
 
@@ -75,6 +92,8 @@ class HomeScreen extends Component<{}> {
       </View>
     );
   }
+
+
 }
 
 class DetailsScreen extends React.Component {
@@ -90,11 +109,34 @@ class DetailsScreen extends React.Component {
 
 const AppNavigator = createStackNavigator(
   {
-    Home: HomeScreen,
+
+    Home:{
+
+        screen: HomeScreen, 
+
+        navigationOptions: { 
+            header: null,
+           
+            //title: 'Happy App :)',
+            /*headerStyle: {
+              backgroundColor: '#F7FA25',
+            },
+
+             headerRight: (
+                <Button
+                  onPress={() => alert('This is a button!')}
+                  title="Info"
+                  color="#FA5C25"/>
+              )*/
+          
+        },
+      },
+
     Details: DetailsScreen
   },
   {
     initialRouteName: "Home"
+ 
   }
 );
 
