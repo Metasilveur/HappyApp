@@ -56,14 +56,7 @@ class HomeScreen extends Component<{}> {
           //onSwiped={() => console.log('onSwiped')}
           //onSwipedLeft={() => console.log('onSwipedLeft')}
         >
-          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[0].uri} /></Card>
-          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[1].uri} /></Card>
-          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[2].uri} /></Card>
-          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[3].uri} /></Card>
-          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[4].uri} /></Card>
-          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[5].uri} /></Card>
-          <Card style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[6].uri} /></Card>
-
+        
            {Array}
 
         </CardStack>
