@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
 import {StyleSheet,Dimensions,Button, Text,Animated, View, TouchableOpacity, Image} from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import CardStack, { Card } from 'react-native-card-stack-swiper';
