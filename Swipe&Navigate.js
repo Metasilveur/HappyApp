@@ -23,7 +23,20 @@ const Assets = [
 class HomeScreen extends Component<{}> {
 
 
-  
+  constructor() {
+    super()
+    this.state = {
+      Picture: [
+        { id: "1", uri: require('./assets/FakePicture/1.jpg')},
+        { id: "2", uri: require('./assets/FakePicture/2.jpg')},
+        { id: "3", uri: require('./assets/FakePicture/3.jpg')},        
+        { id: "4", uri: require('./assets/FakePicture/4.jpg')},
+        { id: "5", uri: require('./assets/FakePicture/5.jpg')},
+        { id: "6", uri: require('./assets/FakePicture/6.jpg')},
+        { id: "7", uri: require('./assets/FakePicture/7.jpg')},
+      ]
+    }
+  }
 
   render() {
 
@@ -56,9 +69,12 @@ class HomeScreen extends Component<{}> {
           //onSwiped={() => console.log('onSwiped')}
           //onSwipedLeft={() => console.log('onSwipedLeft')}
         >
-        
-           {Array}
-
+                                                                                                            
+           //{Array}
+        {this.state.Picture.map(item => (
+            <Card key={item.id} style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={item.uri} /></Card>
+          ))}
+          
         </CardStack>
 
 
