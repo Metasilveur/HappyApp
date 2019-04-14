@@ -9,95 +9,68 @@ export default class App extends React.Component {
   }
 }
 
-const Assets = [
-  { id: "1", uri: require('./assets/FakePicture/1.jpg')},
-  { id: "2", uri: require('./assets/FakePicture/2.jpg')},
-  { id: "3", uri: require('./assets/FakePicture/3.jpg')},        
-  { id: "4", uri: require('./assets/FakePicture/4.jpg')},
-  { id: "5", uri: require('./assets/FakePicture/5.jpg')},
-  { id: "6", uri: require('./assets/FakePicture/6.jpg')},
-  { id: "7", uri: require('./assets/FakePicture/7.jpg')},
-]
-
 
 class HomeScreen extends Component<{}> {
 
-
   constructor() {
-    super()
-    this.state = {
-      Picture: [
-        { id: "1", uri: require('./assets/FakePicture/1.jpg')},
-        { id: "2", uri: require('./assets/FakePicture/2.jpg')},
-        { id: "3", uri: require('./assets/FakePicture/3.jpg')},        
-        { id: "4", uri: require('./assets/FakePicture/4.jpg')},
-        { id: "5", uri: require('./assets/FakePicture/5.jpg')},
-        { id: "6", uri: require('./assets/FakePicture/6.jpg')},
-        { id: "7", uri: require('./assets/FakePicture/7.jpg')},
-      ]
-    }
-  }
+
+      super()
+
+      this.state = {
+        Picture: [
+            { id: "1", uri: require('./assets/FakePicture/1.jpg')},
+            { id: "2", uri: require('./assets/FakePicture/2.jpg')},
+            { id: "3", uri: require('./assets/FakePicture/3.jpg')},        
+            { id: "4", uri: require('./assets/FakePicture/4.jpg')},
+            { id: "5", uri: require('./assets/FakePicture/5.jpg')},
+            { id: "6", uri: require('./assets/FakePicture/6.jpg')},
+            { id: "7", uri: require('./assets/FakePicture/7.jpg')},
+         ]
+      }
+   }
+  
 
   render() {
 
- var Array = []
- 
-  for(var i=0;i<Assets.length;i++){
-    Array.push(<Card style={[styles.card, styles.card1]}>
-              <Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={Assets[i].uri} />
-              </Card>);
-  }
-
     return (
+
       <View style={{flex:1, marginTop:50}}>
 
         <View style={{ flex: 0.3, justifyContent: "center", alignItems: "center"}}>
-          <Button
-            title="Go :)"
-            onPress={() => this.props.navigation.navigate('Details')}
-          />
-          </View>
+          <Button title="Go :)" onPress={() => this.props.navigation.navigate('Details')}/>
+         </View>
 
         <CardStack
           style={styles.content}
-
+          loop={true}
           renderNoMoreCards={() => <Text style={{fontWeight:'700', fontSize:18, color:'gray'}}>No more cards :(</Text>}
-          ref={swiper => {
-            this.swiper = swiper
-          }}
-
-          //onSwiped={() => console.log('onSwiped')}
-          //onSwipedLeft={() => console.log('onSwipedLeft')}
-        >
-                                                                                                            
-           //{Array}
-        {this.state.Picture.map(item => (
-            <Card key={item.id} style={[styles.card, styles.card1]}><Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={item.uri} /></Card>
-          ))}
-          
+          ref={swiper => {this.swiper = swiper}}>       
+         
+            {this.state.Picture.map(item => (
+               <Card key={item.id} style={[styles.card, styles.card1]}>
+                  <Image style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 20 }} source={item.uri} />
+               </Card>
+            ))}
         </CardStack>
 
 
         <View style={styles.footer}>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={[styles.button,styles.red]} onPress={()=>{
-              this.swiper.swipeLeft();
-            }}>
-              <Image source={require('./assets/red.png')} resizeMode={'contain'} style={{ height: 42, width: 42 }} />
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.button,styles.orange]} onPress={() => {
-              this.swiper.goBackFromLeft();
-            }}>
-              <Image source={require('./assets/back.png')} resizeMode={'contain'} style={{ height: 32, width: 32, borderRadius: 5 }} />
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.button,styles.green]} onPress={()=>{
-              this.swiper.swipeRight();
-            }}>
-              <Image source={require('./assets/green.png')} resizeMode={'contain'} style={{ height: 42, width: 42 }} />
-            </TouchableOpacity>
-          </View>
 
-        </View>
+          <View style={styles.buttonContainer}>
+
+               <TouchableOpacity style={[styles.button,styles.red]} onPress={()=>{this.swiper.swipeLeft(); }}>
+                  <Image source={require('./assets/red.png')} resizeMode={'contain'} style={{ height: 42, width: 42 }} />
+               </TouchableOpacity>
+
+               <TouchableOpacity style={[styles.button,styles.orange]} onPress={() => {this.swiper.goBackFromLeft(); }}>
+                 <Image source={require('./assets/back.png')} resizeMode={'contain'} style={{ height: 32, width: 32, borderRadius: 5 }} />
+               </TouchableOpacity>
+
+               <TouchableOpacity style={[styles.button,styles.green]} onPress={()=>{this.swiper.swipeRight();}}>
+                 <Image source={require('./assets/green.png')} resizeMode={'contain'} style={{ height: 42, width: 42 }} />
+               </TouchableOpacity>
+            </View>
+         </View>
       </View>
     );
   }
@@ -109,8 +82,7 @@ class DetailsScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Ceci est le détail !</Text>
-        
+        <Text>Ceci est le détail !</Text>        
       </View>
     );
   }
@@ -122,7 +94,6 @@ const AppNavigator = createStackNavigator(
     Home:{
 
         screen: HomeScreen, 
-
         navigationOptions: { 
             header: null,
            
@@ -145,7 +116,6 @@ const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: "Home"
- 
   }
 );
 
