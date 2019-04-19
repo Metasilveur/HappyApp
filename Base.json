@@ -1,6 +1,6 @@
 [
 	{
-		"type" : "image", //chat
+		"type" : "image",
 		"id" : 1,
 		"src" : "https://i.ytimg.com/vi/W-PBFMECvTE/maxresdefault.jpg",
 		"keywords" : {
@@ -10,17 +10,17 @@
 		"theme" : "animal",
 	}, 
 	{
-		"type" : "image", //chamarel
+		"type" : "image",
 		"id" : 2,
 		"src" : "https://www.wondermondo.com/wp-content/uploads/2017/09/ChamarelFalls2.jpg",
 		"keywords" : {
 			"first" : "waterfall",
 			"second" : "mauritius",
 		},
-		"theme" : "landscape",
+		"theme" : "travels",
 	}, 
 	{
-		"type" : "image", //panda
+		"type" : "image",
 		"id" : 3,
 		"src" : "https://pbs.twimg.com/media/Cxjpjf6WQAEQoFZ.jpg",
 		"keywords" : {
@@ -30,7 +30,7 @@
 		"theme" : "animal",
 	}, 
 	{
-		"type" : "image", //escalade
+		"type" : "image",
 		"id" : 4,
 		"src" : "http://blog.adrenaline-hunter.com/wp-content/uploads/2018/02/10-bons-conseils-debuter-escalade-1600x980.jpg",
 		"keywords" : {
@@ -40,13 +40,13 @@
 		"theme" : "sport",
 	}, 
 	{
-		"type" : "image", //pere noel
+		"type" : "image",
 		"id" : 5,
 		"src" : "https://i.ytimg.com/vi/7M4KJ8H14No/maxresdefault.jpg",
 		"keywords" : {
 			"first" : "santa",
 			"second" : "rudolf",
 		},
-		"theme" : "christmas",
+		"theme" : "travel",
 	}	
 ]
